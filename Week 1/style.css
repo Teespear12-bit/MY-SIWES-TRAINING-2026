@@ -1,0 +1,116 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background-color: rgb(0, 136, 255);
+    height: 80px;
+    display: flex; 
+    /* display: block; normal */
+    /* display: inline-block; flex + normal */
+    /* display: grid; Rows and columns */
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo{
+    color: white;
+    font-size: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    color: white;
+    align-items: center;
+    gap: 30px;
+    /* background-color: blue; */
+}
+
+.nav-links li a{
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+
+.aet1{
+    width: 100%;
+    display: block;
+    height: auto;
+    border-left: 0;
+    border-right: 0;
+    border-top:0;
+    border-bottom: 10px;
+    border-style: solid;
+    border-color: rgb(0, 136, 255);
+}
+.Aboutme{
+    background-color: rgba(20, 14, 109, 0.966);
+    padding-top: 20px;
+}
+.aboutme{
+     padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+     /*border-radius: 10px;
+     border-style: solid;*/
+     padding-top: 10px;
+     margin: 0px auto;
+}
+h1{
+    margin: 0;
+}
+.name1{
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+  
+}   
+.name2{
+    color: blanchedalmond;
+    font-size: 22px;
+    text-align: center;
+    text-transform: capitalize;
+
+
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.origin{
+      padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+     /*border-radius: 10px;
+     border-style: solid;*/
+     padding-top: 10px;
+     margin: 0px auto;
+}
+.biography{
+     color: blanchedalmond;
+    font-size: 22px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 900px;
+    height: auto;
+    margin: 0 auto;
+}
