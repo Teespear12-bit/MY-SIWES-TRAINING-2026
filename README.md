@@ -1,23 +1,27 @@
-# My_Personal_Webpage
-**My week one project to create my personal webpage**
-## Practical Work
+# Weekly Engineering & Development Log
 
-Create a personal profile webpage containing:
-- Name
-- Picture
-- Biography
-- Education
-- Interests
-- Skills
-- Contact information
+Welcome! This repository tracks my weekly project submissions, code implementations, and progress reports. Each week covers a different topic or technical concept, organized into dedicated folders and feature branches.
 
-Requirements:
-- Use semantic HTML where appropriate
-- Include headings and paragraphs
-- Include an image
-- Include lists
-- Include links
-- Include a simple form element
-- Keep CSS in a separate file
-- Make at least 3 meaningful Git commits
+---
 
+## 🌿 Branching Strategy & Workflow
+
+To maintain clean code history and keep each topic isolated before final integration, this repository uses a feature-branch workflow:
+
+* **`main`**: Contains verified, stable code merged at the end of each submission cycle.
+* **Feature Branches (`week-02`, `week-03`, etc.)**: Active development for each weekly project happens on its own dedicated branch. 
+* **Integration**: At the end of each week, the corresponding feature branch would be reviewed by my supervisor and merged into `main`.
+
+
+---
+
+## 📁 Repository Structure
+
+Each week's work lives in its own subdirectory with dedicated documentation, source files, and supporting materials:
+
+```text
+.
+├── week-01/          # Week 1 project & setup
+├── week-02/          # Week 2 project & documentation
+├── week-03/          # Week 3 project & documentation
+└── README.md         # General repository overview

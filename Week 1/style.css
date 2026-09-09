@@ -54,7 +54,8 @@ nav{
 }
 .Aboutme{
     background-color: rgba(20, 14, 109, 0.966);
-    padding-top: 20px;
+    padding-top: 0px;
+    height: 500px;
 }
 .aboutme{
      padding-top: 40px;
@@ -74,12 +75,14 @@ h1{
     margin: 0;
 }
 .name1{
+    padding-top: 10px;
     color: blanchedalmond;
     margin-left: 20px;
     font-style: italic;
   
 }   
 .name2{
+    padding-top: 10px;
     color: blanchedalmond;
     font-size: 22px;
     text-align: center;
@@ -113,4 +116,37 @@ h1{
     width: 900px;
     height: auto;
     margin: 0 auto;
+    padding-top: 30px;
+}
+
+
+.eduskills{
+    background-color: rgb(0, 136, 255);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+.da1{
+    background-color: rgba(20, 14, 109, 0.966);
+    margin-top: 0px;
+    color:   blanchedalmond;
+    font-size: 25px;
+  text-align: center;
+  padding-bottom: 10px;
+  /*padding-bottom: 20px;*/
+}   
+.EDU{
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 24px;
+    background-color: rgba(20, 14, 109, 0.966) ;
+    height: 40px;
+    padding-top: 20px;
+
+}
+.edu{
+    font-size: 22px;
+    text-align: center;
+    color: white;
 }
