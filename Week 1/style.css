@@ -315,7 +315,7 @@ h1{
      background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
-   height: 700px;
+   height: 900px;
 }
 .Contact{
      padding-top: 40px;
@@ -410,22 +410,49 @@ button{
     padding: 10px 30px;
     cursor: pointer;
     font-weight: 600;
+    
 }
 
 
 .my-button{
     background-color: gold;
+    border-radius: 15px;
+    border-style: groove;
+    
    
   
 
 }
-.lastone{
+.phone{
     color: blanchedalmond;
     text-align: center;
     font-style: italic;
+    margin-top: 29px;
 }
 
-.yh{
+.FORM{
  
     text-align: center;
+}
+.mail{
+    color: blanchedalmond;
+    text-align: center;
+    font-style: italic;
+    margin-top: 29px;
+
+}
+.maIL{
+    background-color: rgb(0, 136, 255) ;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-style: groove;
+    border-color: blanchedalmond ;
+    text-align: center;
+    margin-left: 5px;
+}
+.contactmm a{
+    color: blanchedalmond;
+    text-decoration: underline;
+    font-weight: 500;
 }
