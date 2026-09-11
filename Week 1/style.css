@@ -1,0 +1,458 @@
+body{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background-color:rgba(20, 14, 109, 0.966);
+    height: 80px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-top: 5px ;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 5px;
+    border-style: solid;
+    border-color: rgb(0, 136, 255) ;
+}
+
+.logo{
+    color: white;
+    font-size: 20px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+
+.nav-links{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+    color: white;
+    align-items: center;
+    gap: 30px;
+    /* background-color: blue; */
+}
+
+.nav-links li a{
+    color: aliceblue;
+    text-decoration: none;
+
+}
+
+
+.aet1{
+    width: 100%;
+    display: block;
+    height: auto;
+    border-left: 0;
+    border-right: 0;
+    border-top:0;
+    border-bottom: 10px;
+    border-style: solid;
+    border-color: rgba(20, 14, 109, 0.966);
+}
+.Aboutme{
+     background-image: url('backgr2.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width: 100%;
+    padding-top: 0px;
+    height: 700px;
+   
+}
+.aboutme{
+     padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+     /*border-radius: 10px;
+     border-style: solid;*/
+     padding-top: 10px;
+     margin: 0px auto;
+     border-bottom: 10px solid rgba(20, 14, 109, 0.966);
+}
+h1{
+    margin: 0;
+
+}
+.name1{
+    padding-top: 10px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+  
+}   
+.name2{
+    padding-top: 10px;
+    color: blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+
+
+    width: 900px;
+    height: 80px;
+    margin: 0 auto;
+      padding-left: 15px;
+    padding-right: 15px;
+    background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 7px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove
+}
+
+.origin{
+      padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+    border: 5px;
+    
+     padding-top: 10px;
+     margin: 0px auto;
+}
+.biography{
+     color: blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 950px;
+    height: auto;
+    margin: 17px auto;
+    padding-top: 40px;
+      padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 40px;
+    background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 7px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove
+    
+}
+
+
+.eduskills{
+   background-image: url('backgr.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   width: 100%;
+   height: 920px;
+   padding-top: 0px;
+   padding-bottom: 10px;
+   margin-top: 0;
+  
+}
+
+
+
+.EDU{
+   padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+     /*border-radius: 10px;
+     border-style: solid;*/
+     padding-top: 10px;
+     margin: 0px auto;
+}
+
+.edu{
+   color: blanchedalmond;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    width: 700px;
+    height: 300px;
+    margin: 30px auto  ;
+    padding-top: 70px ;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 7px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    margin-top: 50px;
+}
+.skill-powers-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 50px;
+   
+  
+}
+
+.skill{
+     background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 7px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    width: 450px;
+    height: 220px;
+    margin-left: 70px;
+    margin-top: 50px;
+    padding: 10px 10px;
+
+}
+
+.SF{
+    background-color:rgb(0, 136, 255) ;
+    color:  blanchedalmond;
+    text-align: center;
+    width: 120px;
+    margin: 10px auto;
+    border: 7px solid;
+    border-radius: 20px;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+}
+
+
+.skillz{
+    color: blanchedalmond;
+    background-color: rgba(20, 14, 109, 0.966);
+    font-size: 22px;
+}
+
+.sups{
+     background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 7px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    width: 450px;
+    height: 220px;
+    margin-right: 70px;
+    margin-left: auto;
+    margin-top: 50px;
+    padding: 10px 10px;
+
+}
+
+.SP{
+    background-color:rgb(0, 136, 255) ;
+    color:  blanchedalmond;
+    text-align: center;
+    width: 220px;
+    margin: 10px auto;
+    border: 7px solid;
+    border-radius: 20px;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+}
+
+.supz{
+    color: blanchedalmond;
+    background-color: rgba(20, 14, 109, 0.966);
+    font-size: 22px;
+}
+
+.Int{
+      padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+    border: 5px;
+    
+     padding-top: 10px;
+     margin: 0px auto;
+}
+.interestt{
+    background-image: url(backgr2.jpg);
+     background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 500px;
+}
+.int{
+ padding-top: 10px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+}
+.inter{
+     background-color: rgba(20, 14, 109, 0.966);
+    border-radius: 15px;
+    border: 10px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    width: 550px;
+    height: 240px;
+    margin: 20px auto;
+    padding: 40px 10px;
+    color: blanchedalmond;
+    font-size: 22px;
+}
+.contactmm{
+       background-image: url(backgr.jpg);
+     background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   height: 900px;
+}
+.Contact{
+     padding-top: 40px;
+    padding-bottom: 20px;
+    text-align: center;
+     color: rgb(234, 239, 244);
+     font-size: 25px;
+     font-style: normal;
+     background-color: rgb(0, 136, 255);
+     width: 100%;
+    border: 5px;
+    
+     padding-top: 10px;
+     margin: 0px auto;
+}
+.nam{
+    width: 450px;
+    height: 30px;
+    font-size: 15px;
+     border: 10px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    border-radius: 15px;
+    ;
+}
+.NAM{
+       padding-top: 10px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 20px;
+
+}
+.CON{
+     padding-top: 10px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+}
+.EM{
+     padding-top: 10px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 20px;
+}
+.em{
+      width: 500px;
+    height: 30px;
+    font-size: 15px;
+     border: 10px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    border-radius: 15px;
+    ;
+}
+.ME{
+    padding-top: 0px;
+    color: blanchedalmond;
+    margin-left: 20px;
+    font-style: italic;
+    font-size: 20px;
+}
+.messageme{
+       width: 500px;
+    height: 200px;
+    font-size: 15px;
+     border: 10px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    border-radius: 15px;
+    ;
+
+}
+.CONTACTBOX{
+    background-color:rgba(20, 14, 109, 0.966) ;
+    height: 450px;
+    width: 700px;
+    padding-top: 40px;
+    margin: 10px auto;
+    border-radius: 10px;
+    border: 10px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+   
+}
+
+button{
+   
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-weight: 600;
+    
+}
+
+
+.my-button{
+    background-color: gold;
+    border-radius: 15px;
+    border-style: groove;
+    
+   
+  
+
+}
+.phone{
+    color: blanchedalmond;
+    text-align: center;
+    font-style: italic;
+    margin-top: 29px;
+}
+
+.FORM{
+ 
+    text-align: center;
+}
+.mail{
+    color: blanchedalmond;
+    text-align: center;
+    font-style: italic;
+    margin-top: 29px;
+
+}
+.maIL{
+    background-color: rgb(0, 136, 255) ;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border-style: groove;
+    border-color: blanchedalmond ;
+    text-align: center;
+    margin-left: 5px;
+}
+.contactmm a{
+    color: blanchedalmond;
+    text-decoration: underline;
+    font-weight: 500;
+}
