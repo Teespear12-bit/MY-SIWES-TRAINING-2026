@@ -2,11 +2,18 @@ body{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    
+}
+.container{
+    width: 100%;
+    height: auto;
+
 }
 nav{
     background-color:rgba(20, 14, 109, 0.966);
     height: 80px;
     display: flex; 
+    flex-shrink: 1;
     align-items: center;
     justify-content: space-between;
     padding-left: 20px;
@@ -17,6 +24,7 @@ nav{
     border-bottom: 5px;
     border-style: solid;
     border-color: rgb(0, 136, 255) ;
+  
 }
 
 .logo{
@@ -29,8 +37,8 @@ nav{
 
 .nav-links{
     display: flex;
+    flex-shrink: 10;
     list-style: none;
-    font-size: 20px;
     color: white;
     align-items: center;
     gap: 30px;
@@ -62,7 +70,9 @@ nav{
    background-size: cover;
    width: 100%;
     padding-top: 0px;
-    height: 700px;
+    padding-bottom: 30px;
+    height: auto;
+    margin-bottom: 0px ;
    
 }
 .aboutme{
@@ -99,9 +109,9 @@ h1{
     text-transform: capitalize;
 
 
-    width: 900px;
-    height: 80px;
-    margin: 0 auto;
+    width: fit-content;
+    height: auto;
+    margin: 0 30px;
       padding-left: 15px;
     padding-right: 15px;
     background-color: rgba(20, 14, 109, 0.966);
@@ -109,6 +119,7 @@ h1{
     border: 7px solid;
     border-color:  rgb(0, 136, 255);
     border-style: groove
+    
 }
 
 .origin{
@@ -130,9 +141,9 @@ h1{
     font-size: 20px;
     text-align: center;
     text-transform: capitalize;
-    width: 950px;
+    width: fit-content;
     height: auto;
-    margin: 17px auto;
+    margin: 17px 30px;
     padding-top: 40px;
       padding-left: 30px;
     padding-right: 30px;
@@ -152,10 +163,10 @@ h1{
    background-position: center;
    background-size: cover;
    width: 100%;
-   height: 920px;
+   height: auto;
    padding-top: 0px;
-   padding-bottom: 10px;
-   margin-top: 0;
+   padding-bottom: 30px;
+   margin-top: 0px;
   
 }
 
@@ -181,12 +192,10 @@ h1{
     font-size: 20px;
     text-align: center;
     text-transform: capitalize;
-    width: 700px;
-    height: 300px;
-    margin: 30px auto  ;
-    padding-top: 70px ;
-    padding-left: 20px;
-    padding-right: 20px;
+    width: fit-content;
+    height: auto;
+    margin: 30px 20px ;
+    padding: 33px 20px;
     background-color: rgba(20, 14, 109, 0.966);
     border-radius: 15px;
     border: 7px solid;
@@ -196,10 +205,16 @@ h1{
 }
 .skill-powers-wrap{
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-shrink: 2;
+   /*  justify-content: space-evenly; */
+    gap: 100px;
+    align-items: center; 
+    justify-content: center;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 50px  ;
+
+
    
   
 }
@@ -210,11 +225,11 @@ h1{
     border: 7px solid;
     border-color:  rgb(0, 136, 255);
     border-style: groove;
-    width: 450px;
-    height: 220px;
-    margin-left: 70px;
+    width: fit-content;
+    height: auto;
+   /*  margin-left: 7%;
     margin-top: 50px;
-    padding: 10px 10px;
+    padding: 10px 10px; */
 
 }
 
@@ -222,7 +237,7 @@ h1{
     background-color:rgb(0, 136, 255) ;
     color:  blanchedalmond;
     text-align: center;
-    width: 120px;
+    width: fit-content;
     margin: 10px auto;
     border: 7px solid;
     border-radius: 20px;
@@ -234,7 +249,7 @@ h1{
 .skillz{
     color: blanchedalmond;
     background-color: rgba(20, 14, 109, 0.966);
-    font-size: 22px;
+    /* font-size: 95%; */
 }
 
 .sups{
@@ -243,11 +258,11 @@ h1{
     border: 7px solid;
     border-color:  rgb(0, 136, 255);
     border-style: groove;
-    width: 450px;
-    height: 220px;
-    margin-right: 70px;
+    width: fit-content;
+    height: auto;
+ /*    margin-right: 7%;
     margin-left: auto;
-    margin-top: 50px;
+    margin-top: 50px; */
     padding: 10px 10px;
 
 }
@@ -256,7 +271,7 @@ h1{
     background-color:rgb(0, 136, 255) ;
     color:  blanchedalmond;
     text-align: center;
-    width: 220px;
+    width: fit-content;
     margin: 10px auto;
     border: 7px solid;
     border-radius: 20px;
@@ -267,7 +282,7 @@ h1{
 .supz{
     color: blanchedalmond;
     background-color: rgba(20, 14, 109, 0.966);
-    font-size: 22px;
+    /* font-size: 95%; */
 }
 
 .Int{
@@ -289,13 +304,15 @@ h1{
      background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
-   height: 500px;
+   height: auto;
+   padding-bottom: 20px;
 }
 .int{
  padding-top: 10px;
     color: blanchedalmond;
     margin-left: 20px;
     font-style: italic;
+   
 }
 .inter{
      background-color: rgba(20, 14, 109, 0.966);
@@ -303,8 +320,8 @@ h1{
     border: 10px solid;
     border-color:  rgb(0, 136, 255);
     border-style: groove;
-    width: 550px;
-    height: 240px;
+    width: fit-content;
+    height: auto;
     margin: 20px auto;
     padding: 40px 10px;
     color: blanchedalmond;
@@ -315,7 +332,9 @@ h1{
      background-repeat: no-repeat;
    background-position: center;
    background-size: cover;
-   height: 900px;
+   height: auto;
+   padding-bottom: 20px ;
+
 }
 .Contact{
      padding-top: 40px;
@@ -332,7 +351,7 @@ h1{
      margin: 0px auto;
 }
 .nam{
-    width: 450px;
+    width: 70%;
     height: 30px;
     font-size: 15px;
      border: 10px solid;
@@ -342,7 +361,7 @@ h1{
     ;
 }
 .NAM{
-       padding-top: 10px;
+    padding-top: 10px;
     color: blanchedalmond;
     margin-left: 20px;
     font-style: italic;
@@ -363,7 +382,7 @@ h1{
     font-size: 20px;
 }
 .em{
-      width: 500px;
+      width: 70%;
     height: 30px;
     font-size: 15px;
      border: 10px solid;
@@ -380,8 +399,8 @@ h1{
     font-size: 20px;
 }
 .messageme{
-       width: 500px;
-    height: 200px;
+    width: 80%;
+    height: 120%;
     font-size: 15px;
      border: 10px solid;
     border-color:  rgb(0, 136, 255);
@@ -392,9 +411,10 @@ h1{
 }
 .CONTACTBOX{
     background-color:rgba(20, 14, 109, 0.966) ;
-    height: 450px;
-    width: 700px;
+    height: auto;
+    width: 80%;
     padding-top: 40px;
+    padding-bottom: 10px;
     margin: 10px auto;
     border-radius: 10px;
     border: 10px solid;
@@ -419,6 +439,7 @@ button{
     border-radius: 15px;
     border-style: groove;
     
+    
    
   
 
@@ -428,6 +449,7 @@ button{
     text-align: center;
     font-style: italic;
     margin-top: 29px;
+    width: 100%;
 }
 
 .FORM{
@@ -439,6 +461,12 @@ button{
     text-align: center;
     font-style: italic;
     margin-top: 29px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: auto;
+    padding: 20px 10px;
 
 }
 .maIL{
@@ -451,8 +479,119 @@ button{
     text-align: center;
     margin-left: 5px;
 }
-.contactmm a{
+
+.contactmm  a{
     color: blanchedalmond;
     text-decoration: underline;
     font-weight: 500;
+    
 }
+.Mbutton{
+    margin: 5px auto;
+    text-align: center;
+
+}
+
+@media (max-width: 300px)
+{
+    .Aboutme{
+        padding:0 0 10px 0;
+    }
+    .aboutme{
+        font-size: 15px;
+    }
+    .name1{
+        font-size: 9px;
+    }
+   .name2{
+    margin: 0 0px;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    
+}  
+.biography{
+     margin: 0 0px;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+}
+.eduskills{
+    padding:0px 0 10px 0;
+}
+.edu{
+        margin: 10px 0px ;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+
+}
+
+.EDU{
+    font-size: 15px;
+}
+.Int{
+    font-size: 9px;
+}
+.SF{
+    font-size: 12px;
+}
+.SP{
+    font-size: 12px;
+}
+.skill-powers-wrap{
+    gap: 10px;
+}
+.skill{
+        margin: 0 0px;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    text-align: left;
+}
+.sups{
+          margin: 0 0px;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    text-align: left;
+
+}
+.inter{
+      margin: 0 10px;
+    padding: 1px 1px;
+    font-size: 12px;
+     border-radius: 15px;
+    border: 2px solid;
+    border-color:  rgb(0, 136, 255);
+    border-style: groove;
+    font-size: 12px;
+
+}
+.int{
+    font-size: 12px;
+}
+.origin{
+    font-size: 15px;
+}
+.FORM{
+    font-size: 9px;
+}
+}
+
+
