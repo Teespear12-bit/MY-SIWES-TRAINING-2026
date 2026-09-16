@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0px;
+    padding: 0px;
+}
+.navbar{
+    background-color: rgb(127, 26, 31);
+    display: flex;
+    justify-content: space-between;
+   /* flex-wrap: wrap; */
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 0px;
+    
+ /*    flex-shrink: 1;
+ */
+}
+
+.navs{
+    color: rgb(73, 72, 72);
+    align-items: flex-end;
+    /* flex-shrink: 2; */
+}
+.navlinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+    gap: 80px;
+   flex-shrink: 2;
+    padding-right: 30px ;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+   
+}
+.logo{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:  rgb(39, 36, 36);
+  border: 5px double  rgb(127, 26, 31);
+  background-color: rgba(225, 212, 192, 0.826);
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+ margin-left: 20px;
+   
+}
+.regformcont{
+    background-image: url('pic1.jpg');
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* gap: 50px; */
+    border-bottom: 50px solid rgb(127, 26, 31) ;
+
+}
+.FORM{
+    text-align: center;
+    width: fit-content;
+    height: auto;
+    border: 10px groove  rgb(127, 26, 31)   ;
+    padding: 50px 70px;
+    margin-left: auto;
+    margin-right:auto;
+    border-radius: 20px;
+    
+   
+}
+.inputlabels{
+    color: rgb(127, 26, 31) ;
+
+}
+.inputbox{
+     border: 5px double  rgb(127, 26, 31);
+    border-radius: 10px;
+    margin-bottom: 20px;
+   padding: 7px 10px;
+   width: 90%;
+   
+
+
+}
+.regformcont button{
+      background-color:  rgb(127, 26, 31) ;
+    padding: 10px;
+    border: 5px double   rgba(225, 212, 192, 0.826);
+    border-radius: 20px;
+    width: fit-content;
+    height: auto;
+    color:  rgba(225, 212, 192, 0.826) ;
+}
