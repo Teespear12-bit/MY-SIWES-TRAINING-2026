@@ -8,73 +8,113 @@
   </head>
   <body>
     <div class="container">
-      <div class="navbar">
-        <div class="logo">AETSS</div>
-        <div class="navlinks">
+      <div class="navbar"> <!--Created a nav bar-->
+        <div class="logo">AETSS</div> <!--Created my logo (AETSS)-->
+        <div class="navlinks"> <!--Created some navlinks (They do not link to anything yet tho) -->
           <div class="navs"><a href="index.html">Home</a></div>
           <div class="navs"><a href="#">Calendar</a></div>
           <div class="navs"><a href="#">Courses</a></div>
           <div class="navs"><a href="#">Login</a></div>
         </div>
       </div>
-      <div class="regformcont">
-        <form class="FORM">
-          <div class="input-tags">
-            <label class="inputlabels">FIRST NAME:</label>
-            <input
-              class="inputbox"
-              type="text"
-              placeholder="Your  first name"
-            /><br /><br />
-          </div>
+      <div class="regformcont"><!--Created this to house everything except the navbar-->
+        <div class="status" id="status"><!--Created this to show registration successful-->
+          <p class="regcoment" id="regcoment">Registration Succesful ✅</p><
+          <p class="regcoment2" id="regcoment2">
+            Congrats! you've succesfully registered!!
+          </p><!--But i used css to make the visibility hidden, It later becomes visible when conditions in js are met-->
+        </div>
+        <div class="Formcont"><!--The form-->
+          <form class="FORM" id="FORM">
+            <div class="input-tags">
+              <label class="inputlabels">FIRST NAME:</label>
 
-          <div class="input-tags">
-            <label class="inputlabels">LAST NAME:</label>
-            <input
-              class="inputbox"
-              type="text"
-              placeholder="Yourlast name"
-            /><br /><br />
-          </div>
-          <div class="input-tags">
-            <label class="inputlabels">EMAIL:</label>
-            <input
-              class="inputbox"
-              type="email"
-              placeholder="Your email"
-            /><br /><br />
-          </div>
+              <input
+                class="inputbox"
+                id="Firstname"
+                type="text"
+                placeholder="Your  first name"
+              />
+              <div class="errormessage">Error</div><!--Helps show errors--><!--made it's visibility hidden in the css and it becomes visible when js sees a conditon is not meet-->
+              <br /><br />
+            </div>
 
-          <div class="input-tags">
-            <label class="inputlabels"> PHONE NUMBER:</label>
-            <input
-              class="inputbox"
-              type="tel"
-              placeholder="Phone number"
-            /><br /><br />
-          </div>
-          <div class="input-tags">
-            <label class="inputlabels"> DEPARTMENT:</label>
-            <input
-              class="inputbox"
-              type="tel"
-              placeholder="Your department"
-            /><br /><br />
-          </div>
-          <div class="input-tags">
-            <label class="inputlabels">LEVEL:</label>
-            <input
-              class="inputbox"
-              type="tel"
-              placeholder="Your level"
-            /><br /><br />
-          </div>
+            <div class="input-tags">
+              <label class="inputlabels">LAST NAME: </label>
+              <input
+                class="inputbox"
+                id="lastname"
+                type="text"
+                placeholder="Yourlast name"
+              />
+              <div class="errormessage">Error</div>
+              <br /><br />
+            </div>
+            <div class="input-tags">
+              <label class="inputlabels" for="email">EMAIL:</label>
+              <input
+                class="inputbox"
+                id="email"
+                type="email"
+                placeholder="Your email"
+              />
+              <div class="errormessage">Error</div>
+              <br /><br />
+            </div>
 
-          <!-- <div class="my-button"> -->
-          <button class="my-button" type="submit">SUBMIT</button>
-          <!-- </div> -->
-        </form>
+            <div class="input-tags">
+              <label class="inputlabels" for="number">PHONE NUMBER:</label>
+
+              <input
+                class="inputbox"
+                id="number"
+                type="tel"
+                placeholder="Phone number"
+              />
+              <div class="errormessage">Error</div>
+              <br /><br />
+            </div>
+            <div class="input-tags">
+              <label class="inputlabels" for="department">DEPARTMENT:</label>
+
+              <input
+                class="inputbox"
+                id="department"
+                type="text"
+                placeholder="Your department"
+              />
+              <div class="errormessage">Error</div>
+              <br /><br />
+            </div>
+            <div class="input-tags">
+              <label class="inputlabels" for="level">LEVEL:</label>
+
+              <select
+                class="inputbox"
+                id="level"
+                type="text"
+                placeholder="Your level"
+              >
+                <option class="lvls" value="">none</option>
+                <option class="lvls">100 LEVEL</option>
+                <option class="lvls">200 LEVEL</option>
+                <option class="lvls">300 LEVEL</option>
+                <option class="lvls">400 LEVEL</option>
+                <option class="lvls">500 LEVEL</option>
+                <option class="lvls">600 LEVEL</option>
+              </select>
+
+              <div class="errormessage">Error</div>
+              <br /><br />
+            </div>
+
+            <!-- <div class="my-button"> -->
+            <button class="my-button" type="submit">SUBMIT</button>
+            <!-- </div> -->
+          </form>
+        </div>
       </div>
     </div>
+    <script src="registration.js"></script>
   </body>
 </html>

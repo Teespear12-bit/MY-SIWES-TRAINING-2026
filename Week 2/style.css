@@ -39,6 +39,9 @@ body{
     color: white;
    
 }
+.navbar a:hover{
+    color:  rgba(225, 212, 192, 0.826);
+}
 .logo{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color:  rgb(39, 36, 36);
@@ -108,4 +111,7 @@ body{
     color: rgba(225, 212, 192, 0.826);
     font-weight: bolder;
      text-decoration: none ;
+}
+.REG button:hover{
+    background-color:  rgb(196, 56, 63);
 }
