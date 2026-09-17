@@ -1,5 +1,3 @@
-
-
 //Got this to get elements from html
 const form = document.getElementById('FORM');
 const firstName = document.getElementById('Firstname');
@@ -8,9 +6,7 @@ const email = document.getElementById('email');
 const number = document.getElementById('number');
 const department = document.getElementById('department');
 const level = document.getElementById('level');
-const statuss = document.getElementById('status')
-
-
+const statuss = document.getElementById('status');
 
 // To Get the values inputed and store them in those variables and check if specific conditions or errors are meet
 function checkinputs() {
@@ -22,7 +18,7 @@ function checkinputs() {
     const departmentValue = department.value.trim();
     const levelValue = level.value.trim();
 
-//All my conitions for error message to show  
+//All my conitions for error message to show   
     if (firstNameValue.length <= 1){
         giveerror(firstName, "First name Invalid detail");
     }
@@ -40,33 +36,40 @@ function checkinputs() {
         giveerror(email, "Email Invalid detail");
     }
     if (emailValue === '') {
-        
         giveerror(email, "You did not enter this Detail" );
-    } 
-    if (numberValue === '') {
-        giveerror(number, "You did not enter this Detail" );
     } 
     if (numberValue.length != 11){
         giveerror(number , "Number Invalid detail");
     }
+    if (numberValue === '') {
+        giveerror(number, "You did not enter this Detail" );
+    } 
     if (departmentValue.length <= 3){
         giveerror(department, "Department Invalid detail");
     }
     if (departmentValue === '') {
         giveerror(department, "You did not enter this Detail" );
     } 
-    if(levelValue === ''){
-        giveerror(level, "Select something other than none");
-       
-    }
     if(levelValue == '600 LEVEL'){
         giveerror(level, "Level should be between 100-500");
-        
+    }
+    if(levelValue === ''){
+        giveerror(level, "Select something other than none");
     }
 
    //To display the success validation message
    if(firstNameValue.length >= 2 && firstNameValue != '' && lastNameValue != '' && lastNameValue.length >=2  && emailValue != '' && emailValue.length >= 4 && numberValue.length == 11  && numberValue != '' && departmentValue.length >= 3 && numberValue != '' && levelValue != '' && levelValue != '600 LEVEL'){
     statuss.style.visibility = 'visible';
+
+    dontGiveError(firstName);
+    dontGiveError(lastName);
+    dontGiveError(email);
+    dontGiveError(number);
+    dontGiveError(department);
+    dontGiveError(level);
+   }
+   else {
+    statuss.style.visibility = 'hidden';
    }
 }
 
@@ -79,11 +82,21 @@ function giveerror(input, message) {
     
     
     errorElement.style.visibility = 'visible'; 
+    
+
+}
+//To remove error messages when everywhere good 
+function dontGiveError(input){
+    const parentTag = input.parentElement;
+    const errorElement = parentTag.querySelector('.errormessage'); 
+    errorElement.innerText = '';
+    
+    
+    errorElement.style.visibility = 'hidden'; 
 }
 
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    checkinputs()
+    checkinputs();
 })
-
