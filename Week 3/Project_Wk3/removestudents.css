@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    background-color: rgb(127, 26, 31);
+    display: flex;
+    justify-content: space-between;
+   /* flex-wrap: wrap; */
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 0px;
+    
+}
+.heading{
+    margin-top: 0;
+    background-color: rgb(127, 26, 31);
+    padding: 1%;
+    color:  rgba(225, 212, 192, 0.826);
+    width: fit-content;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    border: 10px  double rgba(225, 212, 192, 0.826); 
+    border-radius: 20px;
+
+}
+
+.navs{
+    color: rgb(73, 72, 72);
+    align-items: flex-end;
+    /* flex-shrink: 2; */
+}
+.navlinks{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: flex-end;
+    gap: 80px;
+   flex-shrink: 2;
+    padding-right: 30px ;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+   
+}
+.navbar a:hover{
+    color:  rgba(225, 212, 192, 0.826);
+}
+.logo{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color:  rgb(39, 36, 36);
+  border: 5px double  rgb(127, 26, 31);
+  background-color: rgba(225, 212, 192, 0.826);
+  width: fit-content;
+  padding: 5px;
+  border-radius: 10px;
+ margin-left: 20px;
+   
+}
+.operationarea{
+    background-image: url('Pic.jpg');
+    padding-top: 20%;
+    text-align: center;
+    padding-bottom: 25%;
+    color: rgb(127, 26, 31);
+    font-size: 20px;
+    border-bottom: 50px solid rgb(127, 26, 31);
+}
+    
+.enter{border: 5px double  rgb(127, 26, 31);
+    border-radius: 10px;
+    margin-bottom: 20px;
+   padding: 7px 10px;
+   width: 10%;
+}
+
+.operationarea button{
+    background-color:  rgb(127, 26, 31) ;
+    padding: 20px;
+    border: 5px double   rgba(225, 212, 192, 0.826);
+    border-radius: 20px;
+    width: fit-content;
+    height: auto;
+    color: rgba(225, 212, 192, 0.826);
+}
+.container{
+    margin-bottom: 7%;
+}
+.operationarea  a{
+    color:  rgb(127, 26, 31);
+    font-weight: bolder;
+     text-decoration: underline ;
+     margin-top: 40%;
+     padding-top: 0%;
+}
+.operationarea a:hover{
+    color: rgb(196, 56, 63);
+}
+.operationarea button:hover{
+    background-color:  rgb(196, 56, 63);
+     cursor: pointer;
+}

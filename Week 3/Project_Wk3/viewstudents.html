@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students</title>
+        <link rel="stylesheet" href="viewstudents.css" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">AETSS</div>
+        <div class="navlinks">
+            <div class="navs"><a href="index.html">Home</a></div>
+            <div class="navs"><a href="#">Calendar</a></div>
+            <div class="navs"><a href="#">Courses</a></div>
+            <div class="navs"><a href="#">Login</a></div>
+        </div>
+    </div>
+
+    <div class="operationarea">
+        <div class="container">
+            <h1 class="heading">VIEW STUDENTS</h1>
+            
+            <table border="1" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Course</th>
+                    </tr>
+                </thead>
+                <tbody id="student-table">
+                    <!-- Loaded dynamically via JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="goback">
+            <a href="operations.html"> >GO BACK </a>
+        </div>
+    </div>
+
+    <script src="shared.js"></script>
+    <script src="viewstudents.js"></script>
+</body>
+</html>
