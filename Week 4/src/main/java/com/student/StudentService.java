@@ -10,7 +10,7 @@ public class StudentService {
     public void addStudent(String name, int age, String course, Department department) {
         Student student = new Student(nextId, name, age, course, department);
         students.add(student);
-        System.out.println("Student added successfully with ID: " + nextId);
+        System.out.println("Student added successfully with ID #" + nextId);
         nextId++;
     }
 
@@ -26,18 +26,21 @@ public class StudentService {
         }
     }
 
-    public void searchStudentByName(String name) {
+    public void searchStudentByName(String query) {
         boolean matchesFound = false;
 
         for (Student s : students) {
-            if (s.getName().equalsIgnoreCase(name)) {
+            boolean nameMatch = s.getName().equalsIgnoreCase(query);
+            boolean courseMatch = s.getCourse().equalsIgnoreCase(query);
+
+            if (nameMatch || courseMatch) {
                 s.displayStudent();
                 matchesFound = true;
             }
         }
 
         if (!matchesFound) {
-            System.out.println("No record matches student name: " + name);
+            System.out.println("No matching student or course found for: " + query);
         }
     }
 
@@ -48,9 +51,9 @@ public class StudentService {
             s.setAge(newAge);
             s.setCourse(newCourse);
             s.setDepartment(newDept);
-            System.out.println("Student details updated successfully.");
+            System.out.println("Student ID #" + id + " updated successfully!");
         } else {
-            System.out.println("Error: Student with ID " + id + " not found.");
+            System.out.println("Error: Student with ID #" + id + " not found.");
         }
     }
 
@@ -58,9 +61,9 @@ public class StudentService {
         Student s = findById(id);
         if (s != null) {
             students.remove(s);
-            System.out.println("Student record deleted successfully.");
+            System.out.println("Student ID #" + id + " deleted successfully!");
         } else {
-            System.out.println("Error: Student with ID " + id + " not found.");
+            System.out.println("Error: Student with ID #" + id + " not found.");
         }
     }
 
@@ -73,4 +76,3 @@ public class StudentService {
         return null;
     }
 }
-

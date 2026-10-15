@@ -3,6 +3,8 @@ package com.student;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+
+
 public class Main {
     private static StudentService studentService = new StudentService();
     private static Scanner scanner = new Scanner(System.in);
@@ -12,7 +14,7 @@ public class Main {
 
         while (!exitFlag) {
             displayMenu();
-            int userSelection = readIntegerInput("Select an option: ");
+            int userSelection = readIntegerInput("Select an option (1-6): ");
 
             if (userSelection == 1) {
                 handleAddStudent();
@@ -62,9 +64,9 @@ public class Main {
     }
 
     private static void handleSearchStudent() {
-        System.out.print("Enter name to search: ");
-        String name = scanner.nextLine();
-        studentService.searchStudentByName(name);
+        System.out.print("Enter name or course to search: ");
+        String query = scanner.nextLine();
+        studentService.searchStudentByName(query);
     }
 
     private static void handleUpdateStudent() {
@@ -96,11 +98,11 @@ public class Main {
             try {
                 System.out.print(prompt);
                 int value = scanner.nextInt();
-                scanner.nextLine();
+                scanner.nextLine(); // Clear newline buffer
                 return value;
             } catch (InputMismatchException e) {
                 System.out.println("Invalid input! Please enter a valid number.");
-                scanner.nextLine();
+                scanner.nextLine(); // Clear bad input
             }
         }
     }

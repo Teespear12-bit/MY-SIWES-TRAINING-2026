@@ -56,6 +56,7 @@ public class Student {
     }
 
     public void displayStudent() {
-        System.out.println("ID: " + id + " | Name: " + name + " | Age: " + age + " | Course: " + course + " | Dept: " + department);
+        System.out.println("ID: " + id + " | Name: " + name + " | Age: " + age + 
+                           " | Course: " + course + " | Dept: " + department);
     }
 }
