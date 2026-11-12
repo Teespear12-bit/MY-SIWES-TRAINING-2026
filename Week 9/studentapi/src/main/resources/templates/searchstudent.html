@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Student - AETSS</title>
   <link rel="stylesheet" th:href="@{/css/searchstudents.css}" />
-
 </head>
 <body>
   <div class="navbar">
     <div class="logo">AETSS</div>
     <div class="navlinks">
-      <div class="navs"><a href="index.html">Home</a></div>
+      <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
       <div class="navs"><a href="#">Calendar</a></div>
       <div class="navs"><a href="#">Courses</a></div>
       <div class="navs"><a href="#">Login</a></div>
@@ -22,19 +21,20 @@
     <div class="container">
       <h1 class="heading">SEARCH STUDENT</h1>
       
-      <label for="search-input">Search by Name or course:</label>
-      <input id="search-input" class="enter">
-      <button id="search-btn">SEARCH</button>
+      <!-- Displays error if student ID does not exist -->
+      <p class="error" th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; font-weight: bold;"></p>
 
-      <div id="results" style="margin-top: 20px;"></div>
+      
+      <form th:action="@{/studentMG/students/search}" method="get">
+        <label for="searchID">Enter Student ID:</label>
+        <input id="searchID" name="id" class="enter" type="number" required>
+        <button id="search-btn" type="submit">SEARCH</button>
+      </form>
     </div>
 
     <div class="goback">
-      <a href="operations.html"> >GO BACK </a>
+      <a th:href="@{/studentMG}"> > GO BACK </a>
     </div>
   </div>
-
-  <script src="shared.js"></script>
-  <script src="searchstudent.js"></script>
 </body>
 </html>

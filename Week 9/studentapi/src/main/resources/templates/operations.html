@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,10 @@
     <div class="navbar">
         <div class="logo">AETSS</div>
         <div class="navlinks">
-          <div class="navs"><a href="index.html">Home</a></div>
-          <div class="navs"><a href="#">Calendar</a></div>
-          <div class="navs"><a href="#">Courses</a></div>
-          <div class="navs"><a href="#">Login</a></div>
+            <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
+            <div class="navs"><a href="#">Calendar</a></div>
+            <div class="navs"><a href="#">Courses</a></div>
+            <div class="navs"><a href="#">Login</a></div>
         </div>
     </div>
 
@@ -21,11 +21,10 @@
         <div class="container">
             <div class="operation"><a th:href="@{/studentMG/students/new}"> => Add Student</a></div>
             <div class="operation"><a th:href="@{/studentMG/students}"> => View Students</a></div>
-            <div class="operation"><a href="#"> => Search Student</a></div>
-            <div class="operation"><a th:href="@{/studentMG/students}"> => Update Student</a></div>
-            <div class="operation"><a th:href="@{/studentMG/students}"> => Remove Student</a></div>
-            <div class="operation"><a href="https://google.com"> => Exit</a></div>
-
+            <div class="operation"><a th:href="@{/studentMG/students/search-page}"> => Search Student</a></div>
+            <div class="operation"><a th:href="@{/studentMG/students/update-page}"> => Update/Edit Student</a></div>
+            <div class="operation"><a th:href="@{/studentMG/students/delete-page}"> => Remove Student</a></div>
+        
         </div>
     </div>
 </body>

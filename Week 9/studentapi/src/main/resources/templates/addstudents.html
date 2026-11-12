@@ -23,24 +23,25 @@
             <h1 class="heading">ADD STUDENT</h1>
 
             <form th:action="@{/studentMG/students/new}" th:object="${student}" method="post" novalidate>
-            <label for="firstName">First Name:</label>
-            <input class="enter" th:field="*{firstName}">
-            <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br><br>
-            <label for="lastName">Last Name:</label>
-            <input class="enter" th:field="*{lastName}">
-            <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br><br>
-            <label for="email">Email:</label>
-            <input type="email" class="enter" th:field="*{email}">
-            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br><br>
-            <label for="level">Level:</label>
-            <input class="enter" th:field="*{level}">
-            <span class="error" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span><br><br>
-            <label for="departmentId">Department ID:</label>
-            <input class="enter" type="number" th:field="*{departmentId}">
-            <span class="error" th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span><br><br>
-            <button class="add" id="add" type="submit">ADD</button>
+                <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
+                <label for="firstName">First Name:</label>
+                <input class="enter" th:field="*{firstName}">
+                <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br><br>
+                <label for="lastName">Last Name:</label>
+                <input class="enter" th:field="*{lastName}">
+                <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br><br>
+                <label for="email">Email:</label>
+                <input type="email" class="enter" th:field="*{email}">
+                <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br><br>
+                <label for="level">Level:</label>
+                <input class="enter" th:field="*{level}">
+                <span class="error" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span><br><br>
+                <label for="departmentId">Department ID:</label>
+                <input class="enter" type="number" th:field="*{departmentId}">
+                <span class="error" th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span><br><br>
+                <button class="add" id="add" type="submit">ADD</button>
             </form>
-            <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
+            
         </div>
 
         <div class="goback">

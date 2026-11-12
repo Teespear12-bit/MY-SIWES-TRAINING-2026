@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <div class="navbar">
         <div class="logo">AETSS</div>
         <div class="navlinks">
-            <div class="navs"><a href="index.html">Home</a></div>
+            <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
             <div class="navs"><a href="#">Calendar</a></div>
             <div class="navs"><a href="#">Courses</a></div>
             <div class="navs"><a href="#">Login</a></div>
@@ -21,22 +21,22 @@
         <div class="container">
             <h1 class="heading">REMOVE STUDENT</h1>
             
-            <label for="id">Enter Student ID to Remove:</label>
-            <input type="number" id="id" class="enter"><br><br>
+            <!-- Error message display -->
+            <p class="error" th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; font-weight: bold;"></p>
+            <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
 
+            <form th:action="@{/studentMG/students/delete-search}" method="get">
+                <label for="id">Enter Student ID to Remove:</label>
+                <input type="number" id="id" name="id" class="enter" required><br><br>
+
+                <button id="delete-btn" type="submit">REMOVE</button>
+            </form>
             
-            <button id="delete-btn">REMOVE</button>
-
-            <p id="msg"></p>
         </div>
 
         <div class="goback">
             <a th:href="@{/studentMG}"> >GO BACK </a>
         </div>
     </div>
-
-    <!-- Script tags loaded at the end of body -->
-    <script src="shared.js"></script>
-    <script src="removestudent.js"></script>
 </body>
 </html>

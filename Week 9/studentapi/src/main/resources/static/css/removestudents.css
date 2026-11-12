@@ -75,7 +75,7 @@ body{
     border-radius: 10px;
     margin-bottom: 20px;
    padding: 7px 10px;
-   width: 20%;
+   width: 10%;
 }
 
 .operationarea button{
@@ -103,4 +103,9 @@ body{
 .operationarea button:hover{
     background-color:  rgb(196, 56, 63);
      cursor: pointer;
+}
+.success {
+    color: green;
+    font-weight: bold;
+    margin-top: 10px;
 }
