@@ -26,7 +26,7 @@ function checkinputs() {
         giveerror(firstName, "First name Invalid detail");
     }
     if (firstNameValue === '') {
-        // alert("You did not enter this Detail" );
+   
         giveerror(firstName, "You did not enter this Detail" );
     } 
     if (lastNameValue.length <= 1){
@@ -68,22 +68,6 @@ function checkinputs() {
     }
 }
 
-   //To display the success validation message
-//    if(firstNameValue.length >= 2 && firstNameValue != '' && lastNameValue != '' && lastNameValue.length >=2  && emailValue != '' && emailValue.length >= 4 && numberValue.length == 11  && numberValue != '' && departmentValue.length >= 3 && numberValue != '' && levelValue != '' && levelValue != '600 LEVEL'){
-//     statuss.style.visibility = 'visible';
-
-//     dontGiveError(firstName);
-//     dontGiveError(lastName);
-//     dontGiveError(email);
-//     dontGiveError(number);
-//     dontGiveError(department);
-//     dontGiveError(level);
-//    }
-//    else {
-//     statuss.style.visibility = 'hidden';
-//    }
-// }
-
 //Function used to change and make error message visiblle
 function giveerror(input, message) {
 
@@ -92,20 +76,8 @@ function giveerror(input, message) {
     errorElement.innerText = message;
     errorElement.style.visibility = 'visible';
     isTrue = false;
-    
-    
 
 }
-//To remove error messages when everywhere good 
-// function dontGiveError(input){
-//     const parentTag = input.parentElement;
-//     const errorElement = parentTag.querySelector('.errormessage'); 
-//     errorElement.innerText = '';
-    
-    
-//     errorElement.style.visibility = 'hidden'; 
-// }
-
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
