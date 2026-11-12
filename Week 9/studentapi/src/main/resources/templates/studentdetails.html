@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details - AETSS</title>
+    <link rel="stylesheet" th:href="@{/css/studentdetails.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">AETSS</div>
+        <div class="navlinks">
+            <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
+            <div class="navs"><a href="#">Calendar</a></div>
+            <div class="navs"><a href="#">Courses</a></div>
+            <div class="navs"><a href="#">Login</a></div>
+        </div>
+    </div>
+
+    <div class="operationarea">
+        <div class="container">
+            <h1 class="heading">STUDENT DETAILS</h1>
+
+            <div class="details-card">
+                <div class="details-row">
+                    <span class="details-label">Student ID:</span>
+                    <span th:text="${student.id}">1</span>
+                </div>
+                <div class="details-row">
+                    <span class="details-label">First Name:</span>
+                    <span th:text="${student.firstName}">Mr</span>
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Last Name:</span>
+                    <span th:text="${student.lastName}">Sensational</span>
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Email:</span>
+                    <span th:text="${student.email}">john.doe@example.com</span>
+                </div>
+                <div class="details-row">
+                    <span class="details-label">Level:</span>
+                    <span th:text="${student.level}">300LVL</span>
+                </div>
+                <div class="details-row no-border">
+                    <span class="details-label">Department ID:</span>
+                    <span th:text="${student.departmentId}">10</span>
+                </div>
+
+                <div class="action-links">
+                    <a th:href="@{/studentMG/students/edit/{id}(id=${student.id})}">Edit Details</a>
+                    <a th:href="@{/studentMG/students/delete/{id}(id=${student.id})}" 
+                       onclick="return confirm('Are you sure you want to remove this student?');">Remove Student</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="goback">
+            <a th:href="@{/studentMG/students}"> > GO BACK TO LIST </a>
+        </div>
+    </div>
+</body>
+</html>
