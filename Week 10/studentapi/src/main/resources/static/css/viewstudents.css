@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.operationarea{
+    background-image: url('Pic.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 10%;
+    text-align: center;
+    padding-bottom: 15%;
+    color: rgb(127, 26, 31);
+    font-size: 20px;
+    border-bottom: 50px solid rgb(127, 26, 31);
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.heading{
+    margin-top: 0;
+    background-color: rgb(127, 26, 31);
+    padding: 1%;
+    color: rgba(225, 212, 192, 0.826);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    border: 10px double rgba(225, 212, 192, 0.826); 
+    border-radius: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    margin-bottom: 5%;
+}
+
+
+.table-wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-x: auto;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(225, 212, 192, 0.95);
+    border: 5px double rgb(127, 26, 31);
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    color: rgb(39, 36, 36);
+}
+
+th {
+    background-color: rgb(127, 26, 31);
+    color: rgba(225, 212, 192, 0.826);
+    padding: 10px;
+    font-size: 14px;
+    border-bottom: 3px double rgba(225, 212, 192, 0.826);
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgb(127, 26, 31);
+    font-size: 16px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(200, 185, 160, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(196, 56, 63, 0.2);
+}

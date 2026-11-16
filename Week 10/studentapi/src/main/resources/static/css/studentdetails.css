@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    margin-top: 0;
+    background-color: rgb(127, 26, 31);
+    padding: 1%;
+    color: rgba(225, 212, 192, 0.826);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    border: 10px double rgba(225, 212, 192, 0.826); 
+    border-radius: 20px;
+}
+
+
+.operationarea {
+    background-image: url('Pic.jpg');
+    padding-top: 10%;
+    text-align: center;
+    padding-bottom: 15%;
+    color: rgb(127, 26, 31);
+    font-size: 20px;
+    border-bottom: 50px solid rgb(127, 26, 31);
+}
+
+.container {
+    margin-bottom: 5%;
+}
+
+/* Student Details Card Specific Styling */
+.details-card {
+    background-color: rgba(225, 212, 192, 0.95);
+    border: 5px double rgb(127, 26, 31);
+    border-radius: 15px;
+    padding: 25px 35px;
+    width: 40%;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    color: rgb(39, 36, 36);
+}
+
+.details-row {
+    margin-bottom: 12px;
+    font-size: 18px;
+    border-bottom: 1px dashed rgb(127, 26, 31);
+    padding-bottom: 6px;
+}
+
+.details-row.no-border {
+    border-bottom: none;
+}
+
+.details-label {
+    font-weight: bold;
+    color: rgb(127, 26, 31);
+    display: inline-block;
+    width: 150px;
+}
+
+.action-links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.action-links a {
+    background-color: rgb(127, 26, 31);
+    color: rgba(225, 212, 192, 0.826) ;
+    padding: 10px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.action-links a:hover {
+    background-color: rgb(196, 56, 63);
+}

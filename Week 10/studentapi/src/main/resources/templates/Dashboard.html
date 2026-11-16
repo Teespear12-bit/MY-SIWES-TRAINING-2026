@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}" />
+</head>
+<body>
+    <div th:replace="fragments :: navbar"></div>
+    <div class="dashB">
+        <h1 class="heading">Dashboard</h1>
+        <div class="Allnum">
+            <div class="DBox">
+                <div class="category">Total Students</div>
+                <div class="number">25 </div>
+            </div>
+            
+             <div class="DBox">
+                <div class="category">1OOLVL</div>
+                <div class="number">25 </div>
+            </div>
+
+             <div class="DBox">
+                <div class="category">200LVL</div>
+                <div class="number">25 </div>
+            </div>
+
+             <div class="DBox">
+                <div class="category">300LVL</div>
+                <div class="number">25 </div>
+            </div>
+
+            <div class="DBox">
+                <div class="category">4OOLVL</div>
+                <div class="number">25 </div>
+            </div>
+
+            <div class="DBox">
+                <div class="category">500LVL</div>
+                <div class="number">25 </div>
+            </div>
+        </div>
+
+        <div class="opp">
+            <h2 class="operations">Quick Actions</h2>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/new}"> => Add Student</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students}"> => View Students</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/search-page}"> => Search Student</a></div>
+        </div>
+    </div>
+</body>
+</html>

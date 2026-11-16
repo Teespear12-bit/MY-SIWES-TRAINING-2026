@@ -1,0 +1,55 @@
+.dashB{
+    background-image: url('Pic.jpg');
+    padding-top: 5%;
+    padding-bottom: 25%;
+    color: rgb(127, 26, 31);
+    font-size: 20px;
+    border-bottom: 50px solid rgb(127, 26, 31);
+}
+.heading{
+    margin-top: 0;
+    background-color: rgb(127, 26, 31);
+    padding: 1%;
+    color:  rgba(225, 212, 192, 0.826);
+    width: fit-content;
+    margin-left:  auto;
+    margin-right: auto;
+    margin-bottom: 3%;
+    border: 10px  double rgba(225, 212, 192, 0.826); 
+    border-radius: 20px;
+
+}
+.Allnum{
+    /* background-color: chocolate; */
+    display: flex;
+    height: fit-content;
+    justify-content: space-between;
+    /* align-items: center; */
+    align-content: start;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 35px;
+}
+.DBox{
+    background-color: rgb(29, 225, 225);
+    margin: 2px;
+    gap: 40px;
+    padding: 50px 50px;
+}
+.category{
+    font-style: italic;
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+.number{
+    text-align: center;
+
+}
+.operations{
+    background-color: blue;
+}
+.opp{
+    background-color: blueviolet;
+}
