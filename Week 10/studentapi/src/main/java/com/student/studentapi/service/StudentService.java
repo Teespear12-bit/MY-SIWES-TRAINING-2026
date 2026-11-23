@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -46,9 +47,52 @@ public class StudentService {
                 .toList();
     }
 
+    public List<StudentResponse> getRecentStudents() {
+        List<StudentResponse> all = getAllStudents();
+        List<StudentResponse> recent = new ArrayList<>();
+        for (int i = all.size() - 1; i >= 0 && recent.size() < 5; i--) {
+            recent.add(all.get(i));
+        }
+        return recent;
+    }
+
+    public int countByLevel(String level) {
+        int count = 0;
+        for (Student s : studentRepository.findAll()) {
+            if (level.equalsIgnoreCase(s.getLevel())) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     public StudentResponse getStudentById(Integer id) {
         log.info("Fetching student with id {}", id);
         return toResponse(findStudentOrThrow(id));
+    }
+
+    public List<StudentResponse> searchStudents(String keyword) {
+        log.info("Searching students with keyword {}", keyword);
+        String clean = keyword.trim();
+        List<StudentResponse> matches = new ArrayList<>();
+
+        if (clean.matches("\\d+")) {
+            Integer number = Integer.parseInt(clean);
+
+            studentRepository.findById(number).ifPresent(s -> matches.add(toResponse(s)));
+
+            for (Student s : studentRepository.findByDepartmentId(number)) {
+                if (!s.getId().equals(number)) {
+                    matches.add(toResponse(s));
+                }
+            }
+        } else {
+            for (Student s : studentRepository.findByFirstNameContainingIgnoreCaseOrLastNameContainingIgnoreCase(clean, clean)) {
+                matches.add(toResponse(s));
+            }
+        }
+
+        return matches;
     }
 
     public StudentResponse updateStudent(Integer id, CreateStudentRequest request) {

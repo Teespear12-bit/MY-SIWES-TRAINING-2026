@@ -1,87 +1,47 @@
-body{
-    margin: 0;
-    padding: 0;
-}
-.container{
-    margin: 0px;
-    padding: 0px;
-}
-.navbar{
-    background-color: rgb(127, 26, 31);
-    display: flex;
-    justify-content: space-between;
-   /* flex-wrap: wrap; */
-    align-items: center;
-    padding: 10px 20px;
-    margin-bottom: 0px;
-    
- /*    flex-shrink: 1;
- */
-}
-
-.navs{
-    color: rgb(73, 72, 72);
-    align-items: flex-end;
-    /* flex-shrink: 2; */
-}
-.navlinks{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: flex-end;
-    gap: 80px;
-   flex-shrink: 2;
-    padding-right: 30px ;
-}
-
-.navbar a{
-    text-decoration: none;
-    color: white;
-   
-}
-.navbar a:hover{
-    color:  rgba(225, 212, 192, 0.826);
-}
-.logo{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:  rgb(39, 36, 36);
-  border: 5px double  rgb(127, 26, 31);
-  background-color: rgba(225, 212, 192, 0.826);
-  width: fit-content;
-  padding: 5px;
-  border-radius: 10px;
- margin-left: 20px;
-   
-}
-.managementsystem{
-    background-image: url('Pic.jpg');
-    width: 100%;
-    height: auto;
+.managementsystem {
+    background: linear-gradient(rgba(239, 221, 185, 0.65), rgba(239, 221, 185, 0.65)), url('/css/Pic.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 82vh;
     text-align: center;
-    padding-top: 16%;
-    padding-bottom: 5%;
-  
-
+    padding: 60px 20px 80px 20px;
 }
 
-.managementsystem a{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 20px;
-    color:  rgba(225, 212, 192, 0.826);
+.container {
+    background-color: rgb(127, 26, 31);
+    max-width: 460px;
+    padding: 36px 40px;
+    margin: 0 auto;
+    border-radius: 22px;
+    border: 8px double rgba(241, 229, 208, 0.9);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.menu-subtitle {
+    color: rgba(245, 238, 226, 0.85);
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(245, 238, 226, 0.3);
+    padding-bottom: 12px;
+}
+
+.operation {
+    margin: 10px 0;
+}
+
+.managementsystem a {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(245, 238, 226, 0.95);
     text-decoration: none;
-    line-height: 40px;
-    
+    padding: 11px 16px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
 }
-.managementsystem a:hover{
-    color:  rgba(234, 183, 103, 0.826);
 
-}
-.container{
-    background-color:  rgb(127, 26, 31);
-    width: fit-content;
-    padding: 90px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 30px;
-    border: 10px solid rgba(225, 212, 192, 0.826);
+.managementsystem a:hover {
+    background-color: rgba(245, 238, 226, 0.16);
+    color: rgb(255, 240, 215);
+    padding-left: 22px;
 }

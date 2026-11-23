@@ -9,7 +9,7 @@ public class StudentResponse {
     private Integer departmentId;
     
     public StudentResponse(Integer id, String firstName, String lastName, String email, String level,
-            Integer departmentId) {
+        Integer departmentId) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -3,43 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Student</title>
-    <link rel="stylesheet" th:href="@{/css/editstudentsdet.css}" />
+    <title>AETSS | Edit Student</title>
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <link rel="stylesheet" th:href="@{/css/editstudentsdet.css}" />
 </head>
 <body>
- <div th:replace= "fragments :: navbar"></div>
+    <div th:replace="~{fragments :: navbar}"></div>
+
     <div class="operationarea">
+        <h1 class="heading">UPDATE STUDENT</h1>
         <div class="container">
-            <h1 class="heading">UPDATE STUDENT</h1>
-
             <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
-            <form th:action="@{/AETSS/studentMG/students/edit/{id}(id=${studentId})}" th:object="${student}" method="post" novalidate>
-                <label for="firstName">First Name:</label>
-                <input class="enter" th:field="*{firstName}">
-                <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br><br>
 
-                <label for="lastName">Last Name:</label>
-                <input class="enter" th:field="*{lastName}">
-                <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br><br>
+            <form id="studentForm" th:action="@{/AETSS/studentMG/students/edit/{id}(id=${studentId})}" th:object="${student}" method="post" novalidate>
+                <div class="field-group">
+                    <label for="firstName">First Name:</label>
+                    <input class="enter" id="firstName" th:field="*{firstName}">
+                    <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span>
+                </div>
 
-                <label for="email">Email:</label>
-                <input type="email" class="enter" th:field="*{email}">
-                <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br><br>
+                <div class="field-group">
+                    <label for="lastName">Last Name:</label>
+                    <input class="enter" id="lastName" th:field="*{lastName}">
+                    <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span>
+                </div>
 
-                <label for="level">Level:</label>
-                <input class="enter" th:field="*{level}">
-                <span class="error" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span><br><br>
+                <div class="field-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="enter" id="email" th:field="*{email}">
+                    <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                </div>
 
-                <label for="departmentId">Department ID:</label>
-                <input class="enter" type="number" th:field="*{departmentId}">
-                <span class="error" th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span><br><br>
+                <div class="field-group">
+                    <label for="level">Level:</label>
+                    <select class="enter" id="level" th:field="*{level}">
+                        <option value="">Select Level</option>
+                        <option value="100LVL">100LVL</option>
+                        <option value="200LVL">200LVL</option>
+                        <option value="300LVL">300LVL</option>
+                        <option value="400LVL">400LVL</option>
+                        <option value="500LVL">500LVL</option>
+                    </select>
+                    <span class="error" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span>
+                </div>
+
+                <div class="field-group">
+                    <label for="departmentId">Department:</label>
+                    <select class="enter" id="departmentId" th:field="*{departmentId}">
+                        <option value="">Select Department</option>
+                        <option value="101">101 - Computer Engineering</option>
+                        <option value="102">102 - Mechanical Engineering</option>
+                        <option value="103">103 - Electrical & Electronics Engineering</option>
+                        <option value="104">104 - Civil Engineering</option>
+                        <option value="105">105 - Biochemistry</option>
+                        <option value="106">106 - Microbiology</option>
+                        <option value="107">107 - Accounting</option>
+                        <option value="108">108 - Business Administration</option>
+                        <option value="109">109 - Economics</option>
+                        <option value="110">110 - Mass Communication</option>
+                    </select>
+                    <span class="error" th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span>
+                </div>
 
                 <button class="add" id="update" type="submit">UPDATE</button>
             </form>
-            
         </div>
-        <div th:replace="fragments :: goback"></div>
+
+        <div th:replace="~{fragments :: goback}"></div>
     </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

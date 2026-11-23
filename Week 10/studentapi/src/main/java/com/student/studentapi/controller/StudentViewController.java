@@ -13,6 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/AETSS")
 public class StudentViewController {
@@ -23,42 +25,74 @@ public class StudentViewController {
         this.studentService = studentService;
     }
 
-    
-    //Load Home page
+    // 1. Home Page -> home.html
     @GetMapping
     public String showHomePage() {
         return "home";
     }
 
-    // SHOWS MENU PAGE: /studentMG (operations.html)
+    // 2. Dashboard Page -> Dashboard.html
+    @GetMapping("/dashboard")
+    public String dashBoard(Model model) {
+        model.addAttribute("totalStudents", studentService.getAllStudents().size());
+        model.addAttribute("count100", studentService.countByLevel("100LVL"));
+        model.addAttribute("count200", studentService.countByLevel("200LVL"));
+        model.addAttribute("count300", studentService.countByLevel("300LVL"));
+        model.addAttribute("count400", studentService.countByLevel("400LVL"));
+        model.addAttribute("count500", studentService.countByLevel("500LVL"));
+        model.addAttribute("students", studentService.getRecentStudents());
+        return "Dashboard";
+    }
+
+    // 3. Student Operations Menu -> operations.html
     @GetMapping("/studentMG")
     public String showMenu() {
         return "operations";
     }
 
-    // View All Students: /studentMG/students (viewstudents.html)
+    // 4. View All Students -> viewstudents.html
     @GetMapping("/studentMG/students")
     public String listStudents(Model model) {
         model.addAttribute("students", studentService.getAllStudents());
         return "viewstudents";
     }
 
-    //Search Lookup Page: /studentMG/students/search-page (searchstudent.html)
+    // 5. Search Lookup Page -> searchstudent.html
     @GetMapping("/studentMG/students/search-page")
     public String showSearchPage() {
         return "searchstudent";
     }
 
+    // Handles Search Form submission (by ID, First Name, Last Name, or Department ID)
     @GetMapping("/studentMG/students/search")
-    public String searchStudentRedirect(@RequestParam(value = "id", required = false) Integer id, RedirectAttributes redirectAttributes) {
-        if (id == null) {
-            redirectAttributes.addFlashAttribute("errorMessage", "Please enter a valid Student ID.");
-            return "redirect:/studentMG/students/search-page";
+    public String searchStudent(@RequestParam(value = "query", required = false) String query,
+                                @RequestParam(value = "id", required = false) String idFallback,
+                                Model model,
+                                RedirectAttributes redirectAttributes) {
+
+        String searchText = (query != null && !query.trim().isEmpty()) ? query : idFallback;
+
+        if (searchText == null || searchText.trim().isEmpty()) {
+            redirectAttributes.addFlashAttribute("errorMessage", "Please enter a Student ID, Name, or Department ID.");
+            return "redirect:/AETSS/studentMG/students/search-page";
         }
-        return "redirect:/AETSS/studentMG/students/" + id;
+
+        List<StudentResponse> results = studentService.searchStudents(searchText);
+
+        if (results.isEmpty()) {
+            redirectAttributes.addFlashAttribute("errorMessage", "No student found matching: " + searchText);
+            return "redirect:/AETSS/studentMG/students/search-page";
+        }
+
+        if (results.size() == 1) {
+            return "redirect:/AETSS/studentMG/students/" + results.get(0).getId();
+        }
+
+        model.addAttribute("results", results);
+        return "searchstudent";
     }
 
-    //Student Details Page: /studentMG/students/{id} (studentdetails.html)
+    // 6. Student Details Page -> studentdetails.html
     @GetMapping("/studentMG/students/{id}")
     public String viewStudentDetails(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
@@ -71,14 +105,15 @@ public class StudentViewController {
         }
     }
 
-    //Update Lookup Page: /studentMG/students/update-page (updatestudent.html)
+    // 7. Update Lookup Page -> updatestudent.html
     @GetMapping("/studentMG/students/update-page")
     public String showUpdateLookupPage() {
-        return "updatestudent"; 
+        return "updatestudent";
     }
 
     @GetMapping("/studentMG/students/update-search")
-    public String updateStudentRedirect(@RequestParam(value = "id", required = false) Integer id, RedirectAttributes redirectAttributes) {
+    public String updateStudentRedirect(@RequestParam(value = "id", required = false) Integer id,
+                                        RedirectAttributes redirectAttributes) {
         if (id == null) {
             redirectAttributes.addFlashAttribute("errorMessage", "Please enter a valid Student ID.");
             return "redirect:/AETSS/studentMG/students/update-page";
@@ -86,22 +121,23 @@ public class StudentViewController {
         return "redirect:/AETSS/studentMG/students/edit/" + id;
     }
 
-    //Delete Lookup Page: /studentMG/students/delete-page (removestudent.html)
+    // 8. Delete Lookup Page -> removestudent.html
     @GetMapping("/studentMG/students/delete-page")
     public String showDeleteLookupPage() {
-        return "removestudent"; 
+        return "removestudent";
     }
 
     @GetMapping("/studentMG/students/delete-search")
-    public String deleteStudentRedirect(@RequestParam(value = "id", required = false) Integer id, RedirectAttributes redirectAttributes) {
+    public String deleteStudentRedirect(@RequestParam(value = "id", required = false) Integer id,
+                                        RedirectAttributes redirectAttributes) {
         if (id == null) {
             redirectAttributes.addFlashAttribute("errorMessage", "Please enter a valid Student ID.");
-            return "redirect:/studentMG/students/delete-page";
+            return "redirect:/AETSS/studentMG/students/delete-page";
         }
         return "redirect:/AETSS/studentMG/students/delete/" + id;
     }
 
-    //Add Student Form: /studentMG/students/new  (addstudents.html)
+    // 9. Add Student Form -> addstudents.html
     @GetMapping("/studentMG/students/new")
     public String showCreateForm(Model model) {
         if (!model.containsAttribute("student")) {
@@ -133,7 +169,7 @@ public class StudentViewController {
         }
     }
 
-    //Edit Form: /studentMG/students/edit/{id} (editstudentsdet.html)
+    // 10. Edit Student Form -> editstudentsdet.html
     @GetMapping("/studentMG/students/edit/{id}")
     public String showEditForm(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
@@ -170,7 +206,7 @@ public class StudentViewController {
         try {
             studentService.updateStudent(id, request);
             redirectAttributes.addFlashAttribute("successMessage", "Student updated successfully!");
-            return "redirect:/AETSS/studentMG/students/edit/{id}";
+            return "redirect:/AETSS/studentMG/students/edit/" + id;
         } catch (DuplicateEmail ex) {
             result.rejectValue("email", "duplicate", "Email already in use by another student");
             model.addAttribute("studentId", id);
@@ -182,21 +218,21 @@ public class StudentViewController {
         }
     }
 
-    //Delete Action to delete students (removestudents.html)
+    // 11. Delete Action (works from both removestudent.html and viewstudents.html)
     @GetMapping("/studentMG/students/delete/{id}")
-    public String deleteStudent(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
+    public String deleteStudent(@PathVariable Integer id,
+                                @RequestParam(value = "from", required = false) String from,
+                                RedirectAttributes redirectAttributes) {
         try {
             studentService.deleteStudent(id);
             redirectAttributes.addFlashAttribute("successMessage", "Student has been removed successfully!");
-            return "redirect:/studentMG/students/delete-page";
         } catch (StudentNotFound ex) {
             redirectAttributes.addFlashAttribute("errorMessage", "Student with ID " + id + " does not exist.");
-            return "redirect:/AETSS/studentMG/students/delete-page";
         }
-    }
 
-    @GetMapping("/dashboard")
-    public String dashBoard(){
-    return "Dashboard";
+        if ("list".equals(from)) {
+            return "redirect:/AETSS/studentMG/students";
+        }
+        return "redirect:/AETSS/studentMG/students/delete-page";
     }
 }

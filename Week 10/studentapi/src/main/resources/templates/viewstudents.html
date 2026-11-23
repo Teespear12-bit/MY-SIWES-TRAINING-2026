@@ -1,20 +1,34 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students list</title>
-    <link rel="stylesheet" th:href="@{/css/viewstudents.css}" />
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <link rel="stylesheet" th:href="@{/css/viewstudents.css}" />
 </head>
 <body>
-<div th:replace= "fragments :: navbar"></div>
+    <div th:replace="~{fragments :: navbar}"></div>
 
     <div class="operationarea">
         <div class="container">
             <h1 class="heading">VIEW STUDENTS</h1>
-            
-            <table border="1" style="width: 90%;" >
+
+            <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
+
+            <div class="search-bar">
+                <input type="text" id="searchInput" class="enter" placeholder="Search name, ID or department...">
+                <select id="levelFilter" class="enter">
+                    <option value="">All Levels</option>
+                    <option value="100LVL">100LVL</option>
+                    <option value="200LVL">200LVL</option>
+                    <option value="300LVL">300LVL</option>
+                    <option value="400LVL">400LVL</option>
+                    <option value="500LVL">500LVL</option>
+                </select>
+            </div>
+
+            <table border="1" id="studentsTable">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -22,24 +36,44 @@
                         <th>Last Name</th>
                         <th>Email</th>
                         <th>Level</th>
-                        <th>Department ID</th>
+                        <th>Department</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
-                <tbody >
-                    <tr th:each = "students: ${students}">
-                        <td th:text = "${students.id}"></td>
-                        <td th:text = "${students.firstName}"></td>
-                        <td th:text = "${students.lastName}"></td>
-                        <td th:text = "${students.email}"></td>
-                        <td th:text = "${students.level}"></td>
-                        <td th:text = "${students.departmentId}"></td>
+                <tbody>
+                    <tr th:each="students : ${students}">
+                        <td th:text="${students.id}"></td>
+                        <td th:text="${students.firstName}"></td>
+                        <td th:text="${students.lastName}"></td>
+                        <td th:text="${students.email}"></td>
+                        <td th:text="${students.level}"></td>
+                        <td th:switch="${students.departmentId}">
+                            <span th:case="101">Computer Engineering</span>
+                            <span th:case="102">Mechanical Engineering</span>
+                            <span th:case="103">Electrical &amp; Electronics Engineering</span>
+                            <span th:case="104">Civil Engineering</span>
+                            <span th:case="105">Biochemistry</span>
+                            <span th:case="106">Microbiology</span>
+                            <span th:case="107">Accounting</span>
+                            <span th:case="108">Business Administration</span>
+                            <span th:case="109">Economics</span>
+                            <span th:case="110">Mass Communication</span>
+                            <span th:case="*" th:text="${students.departmentId}"></span>
+                        </td>
+                        <td>
+                            <a class="table-btn" th:href="@{/AETSS/studentMG/students/{id}(id=${students.id})}">View</a>
+                            <a class="table-btn" th:href="@{/AETSS/studentMG/students/edit/{id}(id=${students.id})}">Edit</a>
+                            <a class="table-btn delete-link" th:href="@{/AETSS/studentMG/students/delete/{id}(id=${students.id}, from='list')}">Delete</a>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
 
-        <div th:replace="fragments :: goback"></div>
+        <div th:replace="~{fragments :: goback}"></div>
+    </div>
 
-
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

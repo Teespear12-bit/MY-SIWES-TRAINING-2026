@@ -1,54 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AETSS | Dashboard</title>
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
     <link rel="stylesheet" th:href="@{/css/dashboard.css}" />
 </head>
 <body>
-    <div th:replace="fragments :: navbar"></div>
+    <div th:replace="~{fragments :: navbar}"></div>
+
     <div class="dashB">
-        <h1 class="heading">Dashboard</h1>
+        <h1 class="dashbrd">DASHBOARD</h1>
+        <p class="dash-subtitle">Overview of student enrollment across levels and recent registrations.</p>
+
         <div class="Allnum">
             <div class="DBox">
                 <div class="category">Total Students</div>
-                <div class="number">25 </div>
-            </div>
-            
-             <div class="DBox">
-                <div class="category">1OOLVL</div>
-                <div class="number">25 </div>
-            </div>
-
-             <div class="DBox">
-                <div class="category">200LVL</div>
-                <div class="number">25 </div>
-            </div>
-
-             <div class="DBox">
-                <div class="category">300LVL</div>
-                <div class="number">25 </div>
+                <div class="number" th:text="${totalStudents ?: 0}">0</div>
             </div>
 
             <div class="DBox">
-                <div class="category">4OOLVL</div>
-                <div class="number">25 </div>
+                <div class="category">100LVL</div>
+                <div class="number" th:text="${count100 ?: 0}">0</div>
+            </div>
+
+            <div class="DBox">
+                <div class="category">200LVL</div>
+                <div class="number" th:text="${count200 ?: 0}">0</div>
+            </div>
+
+            <div class="DBox">
+                <div class="category">300LVL</div>
+                <div class="number" th:text="${count300 ?: 0}">0</div>
+            </div>
+
+            <div class="DBox">
+                <div class="category">400LVL</div>
+                <div class="number" th:text="${count400 ?: 0}">0</div>
             </div>
 
             <div class="DBox">
                 <div class="category">500LVL</div>
-                <div class="number">25 </div>
+                <div class="number" th:text="${count500 ?: 0}">0</div>
             </div>
         </div>
 
-        <div class="opp">
-            <h2 class="operations">Quick Actions</h2>
-            <div class="operation"><a th:href="@{/AETSS/studentMG/students/new}"> => Add Student</a></div>
-            <div class="operation"><a th:href="@{/AETSS/studentMG/students}"> => View Students</a></div>
-            <div class="operation"><a th:href="@{/AETSS/studentMG/students/search-page}"> => Search Student</a></div>
+        <h2 class="Recentlyadded">RECENTLY ADDED STUDENTS</h2>
+
+        <div class="student_section">
+            <div class="table-wrapper">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Level</th>
+                            <th>Department ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="student : ${students}">
+                            <td th:text="${student.id}">1</td>
+                            <td th:text="${student.firstName + ' ' + student.lastName}">Elisha Awotunde</td>
+                            <td th:text="${student.level}">300LVL</td>
+                            <td th:text="${student.departmentId}">101</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="opp">
+                <h2 class="operations">Quick Actions</h2>
+                <p class="opp-desc">Manage records and student lookups</p>
+                <div class="opplinks">
+                    <div class="operation"><a th:href="@{/AETSS/studentMG/students/new}"> => Add Student</a></div>
+                    <div class="operation"><a th:href="@{/AETSS/studentMG/students}"> => View All Students</a></div>
+                    <div class="operation"><a th:href="@{/AETSS/studentMG/students/search-page}"> => Search Student</a></div>
+                    <div class="operation"><a th:href="@{/AETSS/studentMG/students/update-page}"> => Update Student</a></div>
+                </div>
+            </div>
         </div>
+
+        <div th:replace="~{fragments :: goback}"></div>
     </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>

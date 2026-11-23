@@ -1,73 +1,85 @@
-body{
+body {
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(245, 240, 232);
+    color: rgb(39, 36, 36);
 }
 
-.navbar{
+.navbar {
     background-color: rgb(127, 26, 31);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    margin-bottom: 0px;
-    
-}
-.heading{
-    margin-top: 0;
-    background-color: rgb(127, 26, 31);
-    padding: 1%;
-    color:  rgba(225, 212, 192, 0.826);
-    width: fit-content;
-    margin-left:  auto;
-    margin-right: auto;
-    margin-bottom: 3%;
-    border: 10px  double rgba(225, 212, 192, 0.826); 
-    border-radius: 20px;
-
+    padding: 12px 30px;
 }
 
-.navs{
-    color: rgb(73, 72, 72);
-    align-items: flex-end;
-    /* flex-shrink: 2; */
+.logo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: rgb(127, 26, 31);
+    border: 4px double rgb(127, 26, 31);
+    background-color: rgba(225, 212, 192, 0.92);
+    padding: 6px 12px;
+    border-radius: 10px;
 }
-.navlinks{
+
+.navlinks {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
-    align-content: flex-end;
-    gap: 80px;
-   flex-shrink: 2;
-    padding-right: 30px ;
+    gap: 45px;
+    padding-right: 15px;
 }
 
-.navbar a{
+.navbar a {
     text-decoration: none;
-    color: white;
-   
+    color: rgba(244, 235, 220, 0.9);
+    font-weight: 500;
 }
-.navbar a:hover{
-    color:  rgba(225, 212, 192, 0.826);
+
+.navbar a:hover,
+.navbar a.active {
+    color: rgba(225, 212, 192, 0.9);
+    text-decoration: underline;
+    cursor: pointer;
 }
-.logo{
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color:  rgb(39, 36, 36);
-  border: 5px double  rgb(127, 26, 31);
-  background-color: rgba(225, 212, 192, 0.826);
-  width: fit-content;
-  padding: 5px;
-  border-radius: 10px;
- margin-left: 20px;
-   
+
+.heading {
+    margin-top: 20px;
+    background-color: rgb(127, 26, 31);
+    padding: 14px 32px;
+    color: rgba(245, 238, 226, 0.95);
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    border: 8px double rgba(237, 221, 192, 0.9);
+    border-radius: 20px;
+    font-size: 26px;
 }
-.goback a{
-    color:  rgb(127, 26, 31);
-    font-weight: bolder;
-     text-decoration: underline ;
-     margin-top: 40%;
-     padding-top: 0%;
-     font-family: sans-serif;
+
+.goback {
+    margin-top: 50px;
+    text-align: center;
 }
-.goback a:hover{
+
+.goback a {
+    color: rgb(127, 26, 31);
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 16px;
+}
+
+.goback a:hover {
     color: rgb(196, 56, 63);
+    cursor: pointer;
+}
+
+.footer {
+    background-color: rgb(127, 26, 31);
+    color: rgba(244, 235, 220, 0.9);
+    text-align: center;
+    padding: 14px;
+    font-size: 14px;
 }

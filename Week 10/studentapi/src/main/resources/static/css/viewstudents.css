@@ -1,82 +1,88 @@
-body{
-    margin: 0;
-    padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-/* --- MAIN CONTENT AREA --- */
-.operationarea{
-    background-image: url('Pic.jpg');
+.operationarea {
+    background: linear-gradient(rgba(239, 221, 185, 0.65), rgba(239, 221, 185, 0.65)), url('/css/Pic.jpg');
     background-size: cover;
     background-position: center;
-    padding-top: 10%;
+    padding-top: 60px;
     text-align: center;
-    padding-bottom: 15%;
+    padding-bottom: 80px;
     color: rgb(127, 26, 31);
-    font-size: 20px;
-    border-bottom: 50px solid rgb(127, 26, 31);
-}
-h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
-}
-.heading{
-    margin-top: 0;
-    background-color: rgb(127, 26, 31);
-    padding: 1%;
-    color: rgba(225, 212, 192, 0.826);
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 3%;
-    border: 10px double rgba(225, 212, 192, 0.826); 
-    border-radius: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+    border-bottom: 30px solid rgb(127, 26, 31);
+    min-height: 80vh;
 }
 
-.container{
-    margin-bottom: 5%;
+.container {
+    margin-bottom: 40px;
 }
 
+.search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
 
-.table-wrapper {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    overflow-x: auto;
+.search-bar .enter {
+    border: 5px double rgb(127, 26, 31);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 15px;
+    background-color: white;
 }
 
 table {
-    width: 90%;
-    border-collapse: collapse;
+    width: 92%;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(225, 212, 192, 0.95);
-    border: 5px double rgb(127, 26, 31);
-    border-radius: 15px;
-    overflow: hidden;
-    margin-bottom: 30px;
+    border-collapse: collapse;
+    background-color: rgb(241, 229, 208);
+    border: 3px solid rgb(127, 26, 31);
     color: rgb(39, 36, 36);
 }
 
 th {
     background-color: rgb(127, 26, 31);
-    color: rgba(225, 212, 192, 0.826);
-    padding: 10px;
-    font-size: 14px;
-    border-bottom: 3px double rgba(225, 212, 192, 0.826);
+    color: rgba(245, 238, 226, 0.95);
+    padding: 14px 12px;
+    font-size: 15px;
 }
 
 td {
-    padding: 12px 15px;
-    border-bottom: 1px solid rgb(127, 26, 31);
-    font-size: 16px;
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(127, 26, 31, 0.25);
+    font-size: 15px;
+}
+
+td:last-child {
+    white-space: nowrap;
 }
 
 tr:nth-child(even) {
-    background-color: rgba(200, 185, 160, 0.5);
+    background-color: rgba(225, 212, 192, 0.45);
 }
 
-tr:hover {
-    background-color: rgba(196, 56, 63, 0.2);
+tbody tr:hover {
+    background-color: rgba(196, 56, 63, 0.14);
+}
+
+.table-btn {
+    display: inline-block;
+    background-color: rgb(127, 26, 31);
+    color: rgba(245, 238, 226, 0.95);
+    padding: 6px 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 2px;
+}
+
+.table-btn:hover {
+    background-color: rgb(196, 56, 63);
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 15px;
 }

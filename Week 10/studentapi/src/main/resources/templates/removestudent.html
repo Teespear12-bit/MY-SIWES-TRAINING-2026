@@ -3,31 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/css/removestudents.css}" />
+    <title>Remove Student - AETSS</title>
     <link rel="stylesheet" th:href="@{/css/fragment.css}" />
-    <title>Remove Student</title>
+    <link rel="stylesheet" th:href="@{/css/removestudents.css}" />
 </head>
 <body>
-<div th:replace= "fragments :: navbar"></div>
+    <div th:replace="~{fragments :: navbar}"></div>
 
     <div class="operationarea">
+        <h1 class="heading">REMOVE STUDENT</h1>
         <div class="container">
-            <h1 class="heading">REMOVE STUDENT</h1>
-            
-            <!-- Error message display -->
-            <p class="error" th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; font-weight: bold;"></p>
             <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
+            <p class="error" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
-            <form th:action="@{/AETSS/studentMG/students/delete-search}" method="get">
-                <label for="id">Enter Student ID to Remove:</label>
-                <input type="number" id="id" name="id" class="enter" required><br><br>
-
+            <form id="removeForm" th:action="@{/AETSS/studentMG/students/delete-search}" method="get">
+                <div class="field-group">
+                    <label for="deleteID">Enter Student ID:</label>
+                    <input id="deleteID" name="id" class="enter" type="number" required>
+                </div>
                 <button id="delete-btn" type="submit">REMOVE</button>
             </form>
-            
         </div>
 
-        <div th:replace="fragments :: goback"></div>
+        <div th:replace="~{fragments :: goback}"></div>
     </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
 </body>
 </html>
