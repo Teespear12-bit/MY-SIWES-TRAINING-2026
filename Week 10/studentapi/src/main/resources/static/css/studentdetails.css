@@ -1,0 +1,62 @@
+.operationarea {
+    background: linear-gradient(rgba(239, 221, 185, 0.65), rgba(239, 221, 185, 0.65)), url('/css/Pic.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 60px;
+    text-align: center;
+    padding-bottom: 80px;
+    color: rgb(127, 26, 31);
+    font-size: 19px;
+    border-bottom: 30px solid rgb(127, 26, 31);
+    min-height: 80vh;
+}
+
+.details-card {
+    background-color: rgba(229, 215, 191, 0.95);
+    border: 7px double rgb(127, 26, 31);
+    border-radius: 20px;
+    padding: 30px 35px;
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    text-align: left;
+    color: rgb(39, 36, 36);
+}
+
+.details-row {
+    margin-bottom: 12px;
+    font-size: 18px;
+    border-bottom: 1px dashed rgb(127, 26, 31);
+    padding-bottom: 6px;
+}
+
+.details-row.no-border {
+    border-bottom: none;
+}
+
+.details-label {
+    font-weight: bold;
+    color: rgb(127, 26, 31);
+    display: inline-block;
+    width: 150px;
+}
+
+.action-links {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.action-links a {
+    background-color: rgb(127, 26, 31);
+    color: rgba(245, 238, 226, 0.95);
+    padding: 12px 20px;
+    border: 4px double rgba(245, 238, 226, 0.9);
+    border-radius: 14px;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 8px;
+    display: inline-block;
+}
+
+.action-links a:hover {
+    background-color: rgb(196, 56, 63);
+}

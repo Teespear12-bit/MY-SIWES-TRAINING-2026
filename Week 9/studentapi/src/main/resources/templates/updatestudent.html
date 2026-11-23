@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Student - AETSS</title>
+  <link rel="stylesheet" th:href="@{/css/searchstudents.css}" />
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">AETSS</div>
+    <div class="navlinks">
+      <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
+      <div class="navs"><a href="#">Calendar</a></div>
+      <div class="navs"><a href="#">Courses</a></div>
+      <div class="navs"><a href="#">Login</a></div>
+    </div>
+  </div>
+
+  <div class="operationarea">
+    <div class="container">
+      <h1 class="heading">UPDATE STUDENT</h1>
+
+
+      
+      <!-- Displays error if student ID does not exist -->
+      <p class="error" th:if="${errorMessage}" th:text="${errorMessage}" style="color: red; font-weight: bold;"></p>
+      
+
+      <form th:action="@{/studentMG/students/update-search}" method="get">
+        <label for="searchID">Enter Student ID:</label>
+        <input id="searchID" name="id" class="enter" type="number" required>
+        <button id="search-btn" type="submit">SEARCH</button>
+      </form>
+      
+      
+    </div>
+
+    <div class="goback">
+      <a th:href="@{/studentMG}"> > GO BACK </a>
+    </div>
+  </div>
+</body>
+</html>

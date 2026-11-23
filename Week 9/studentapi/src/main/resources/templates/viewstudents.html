@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students list</title>
+    <link rel="stylesheet" th:href="@{/css/viewstudents.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">AETSS</div>
+        <div class="navlinks">
+            <div class="navs"><a href="#">Home</a></div>
+            <div class="navs"><a href="#">Calendar</a></div>
+            <div class="navs"><a href="#">Courses</a></div>
+            <div class="navs"><a href="#">Login</a></div>
+        </div>
+    </div>
+
+    <div class="operationarea">
+        <div class="container">
+            <h1 class="heading">VIEW STUDENTS</h1>
+            
+            <table border="1" style="width: 90%;" >
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Level</th>
+                        <th>Department ID</th>
+                    </tr>
+                </thead>
+                <tbody >
+                    <tr th:each = "students: ${students}">
+                        <td th:text = "${students.id}"></td>
+                        <td th:text = "${students.firstName}"></td>
+                        <td th:text = "${students.lastName}"></td>
+                        <td th:text = "${students.email}"></td>
+                        <td th:text = "${students.level}"></td>
+                        <td th:text = "${students.departmentId}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="goback">
+            <a th:href="@{/studentMG}"> >GO BACK </a>
+        </div>
+    </div>
+
+
+</body>
+</html>

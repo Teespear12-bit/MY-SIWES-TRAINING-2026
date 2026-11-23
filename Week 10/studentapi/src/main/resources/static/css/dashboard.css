@@ -1,0 +1,190 @@
+.dashB {
+    background: linear-gradient(rgba(239, 221, 185, 0.65), rgba(239, 221, 185, 0.65)), url('/css/Pic.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh;
+    padding: 35px 40px 60px 40px;
+}
+
+.dashbrd {
+    margin: 20px 0 6px 0;
+    color: rgb(127, 26, 31);
+    border-left: 6px solid rgb(127, 26, 31);
+    padding: 2px 14px;
+    font-size: 28px;
+}
+
+.dash-subtitle {
+    margin: 0 0 28px 20px;
+    color: rgb(127, 26, 31);
+    font-size: 15px;
+}
+
+.Allnum {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    padding: 22px;
+    background-color: rgb(127, 26, 31);
+    border-radius: 14px;
+    margin-bottom: 45px;
+}
+
+.DBox {
+    flex: 1;
+    min-width: 130px;
+    background-color: rgb(241, 229, 208);
+    padding: 16px 18px;
+    color: rgb(127, 26, 31);
+    border: 4px double rgb(127, 26, 31);
+    border-radius: 12px;
+    transition: transform 0.2s ease;
+}
+
+.DBox:hover {
+    transform: translateY(-3px);
+}
+
+.category {
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: rgb(95, 25, 29);
+}
+
+.number {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.Recentlyadded {
+    margin: 40px 0 18px 0;
+    color: rgb(127, 26, 31);
+    border-left: 6px solid rgb(127, 26, 31);
+    padding: 2px 14px;
+    font-size: 22px;
+}
+
+.student_section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 32px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.table-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgb(241, 229, 208);
+    border: 2px solid rgb(127, 26, 31);
+    color: rgb(39, 36, 36);
+}
+
+th {
+    background-color: rgb(127, 26, 31);
+    color: rgba(245, 238, 226, 0.95);
+    padding: 14px 15px;
+    font-size: 15px;
+    text-align: left;
+}
+
+td {
+    padding: 13px 15px;
+    border-bottom: 1px solid rgba(127, 26, 31, 0.25);
+    font-size: 15px;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(225, 212, 192, 0.45);
+}
+
+tbody tr:hover {
+    background-color: rgba(196, 56, 63, 0.14);
+}
+
+.empty-row {
+    text-align: center;
+    font-style: italic;
+    color: rgb(127, 26, 31);
+    padding: 22px;
+}
+
+.table-link {
+    color: rgb(127, 26, 31);
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.opp {
+    background-color: rgb(127, 26, 31);
+    color: rgb(241, 229, 208);
+    border-radius: 10px;
+    width: 28%;
+    min-width: 260px;
+    flex: 0 0 auto;
+    padding-bottom: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.operations {
+    background-color: rgb(241, 229, 208);
+    margin: 0 0 10px 0;
+    text-align: center;
+    padding: 12px;
+    font-size: 19px;
+    color: rgb(127, 26, 31);
+    border-bottom: 5px double rgb(127, 26, 31);
+    border-top: 3px solid rgb(127, 26, 31);
+}
+
+.opp-desc {
+    font-size: 13px;
+    text-align: center;
+    margin: 0 16px 14px 16px;
+    color: rgba(245, 238, 226, 0.85);
+}
+
+.opplinks {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 18px;
+}
+
+.opplinks a {
+    display: block;
+    color: rgba(245, 238, 226, 0.95);
+    text-decoration: none;
+    font-size: 15px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.opplinks a:hover {
+    background-color: rgba(245, 238, 226, 0.16);
+    padding-left: 16px;
+}
+
+@media (max-width: 900px) {
+    .student_section {
+        flex-direction: column;
+    }
+
+    .opp {
+        width: 100%;
+    }
+}

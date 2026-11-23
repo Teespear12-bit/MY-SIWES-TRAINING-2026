@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+    <link rel="stylesheet" th:href="@{/css/editstudentsdet.css}" />
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">AETSS</div>
+        <div class="navlinks">
+            <div class="navs"><a th:href="@{/studentMG}">Home</a></div>
+            <div class="navs"><a href="#">Calendar</a></div>
+            <div class="navs"><a href="#">Courses</a></div>
+            <div class="navs"><a href="#">Login</a></div>
+        </div>
+    </div>
+
+    <div class="operationarea">
+        <div class="container">
+            <h1 class="heading">UPDATE STUDENT</h1>
+
+            <p class="success" th:if="${successMessage}" th:text="${successMessage}"></p>
+            <form th:action="@{/studentMG/students/edit/{id}(id=${studentId})}" th:object="${student}" method="post" novalidate>
+                <label for="firstName">First Name:</label>
+                <input class="enter" th:field="*{firstName}">
+                <span class="error" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></span><br><br>
+
+                <label for="lastName">Last Name:</label>
+                <input class="enter" th:field="*{lastName}">
+                <span class="error" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></span><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" class="enter" th:field="*{email}">
+                <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span><br><br>
+
+                <label for="level">Level:</label>
+                <input class="enter" th:field="*{level}">
+                <span class="error" th:if="${#fields.hasErrors('level')}" th:errors="*{level}"></span><br><br>
+
+                <label for="departmentId">Department ID:</label>
+                <input class="enter" type="number" th:field="*{departmentId}">
+                <span class="error" th:if="${#fields.hasErrors('departmentId')}" th:errors="*{departmentId}"></span><br><br>
+
+                <button class="add" id="update" type="submit">UPDATE</button>
+            </form>
+            
+        </div>
+
+        <div class="goback">
+            <a th:href="@{/studentMG}"> >GO BACK </a>
+        </div>
+    </div>
+</body>
+</html>

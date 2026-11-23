@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragments</title>
+    <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+</head>
+<body>
+    <div th:fragment="navbar" class="navbar">
+        <div class="logo">AETSS</div>
+        <div class="navlinks">
+            <div class="navs"><a th:href="@{/AETSS}">Home</a></div>
+            <div class="navs"><a th:href="@{/AETSS/dashboard}">Dashboard</a></div>
+            <div class="navs"><a th:href="@{/AETSS/studentMG}">Student</a></div>
+            <div class="navs"><a th:href="@{/AETSS/studentMG/students}">Students List</a></div>
+        </div>
+    </div>
+
+    <div th:fragment="goback" class="goback">
+        <a th:href="@{/AETSS/studentMG}"> > GO BACK </a>
+    </div>
+
+    <div th:fragment="footer" class="footer">
+        <p>A.E.T Sensational School (AETSS)</p>
+    </div>
+</body>
+</html>

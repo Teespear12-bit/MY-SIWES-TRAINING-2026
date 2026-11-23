@@ -1,0 +1,47 @@
+.managementsystem {
+    background: linear-gradient(rgba(239, 221, 185, 0.65), rgba(239, 221, 185, 0.65)), url('/css/Pic.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 82vh;
+    text-align: center;
+    padding: 60px 20px 80px 20px;
+}
+
+.container {
+    background-color: rgb(127, 26, 31);
+    max-width: 460px;
+    padding: 36px 40px;
+    margin: 0 auto;
+    border-radius: 22px;
+    border: 8px double rgba(241, 229, 208, 0.9);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.menu-subtitle {
+    color: rgba(245, 238, 226, 0.85);
+    margin: 0 0 20px 0;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(245, 238, 226, 0.3);
+    padding-bottom: 12px;
+}
+
+.operation {
+    margin: 10px 0;
+}
+
+.managementsystem a {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(245, 238, 226, 0.95);
+    text-decoration: none;
+    padding: 11px 16px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+}
+
+.managementsystem a:hover {
+    background-color: rgba(245, 238, 226, 0.16);
+    color: rgb(255, 240, 215);
+    padding-left: 22px;
+}

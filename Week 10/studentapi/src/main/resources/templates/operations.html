@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETSS Operations</title>
+    <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <link rel="stylesheet" th:href="@{/css/operations.css}" />
+</head>
+<body>
+    <div th:replace="~{fragments :: navbar}"></div>
+
+    <div class="managementsystem">
+        <div class="container">
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/new}"> => Add Student</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students}"> => View Students</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/search-page}"> => Search Student</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/update-page}"> => Update/Edit Student</a></div>
+            <div class="operation"><a th:href="@{/AETSS/studentMG/students/delete-page}"> => Remove Student</a></div>
+        </div>
+    </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>

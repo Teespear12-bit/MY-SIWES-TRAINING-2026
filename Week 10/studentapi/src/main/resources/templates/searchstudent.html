@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Student - AETSS</title>
+    <link rel="stylesheet" th:href="@{/css/fragment.css}" />
+    <link rel="stylesheet" th:href="@{/css/searchstudents.css}" />
+</head>
+<body>
+    <div th:replace="~{fragments :: navbar}"></div>
+
+    <div class="operationarea">
+        <h1 class="heading">SEARCH STUDENT</h1>
+        <div class="container">
+            <p class="error" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+            <form th:action="@{/AETSS/studentMG/students/search}" method="get">
+                <div class="field-group">
+                    <label for="searchQuery">Enter ID, First Name, Last Name, or Dept ID:</label>
+                    <input id="searchQuery" name="query" class="enter" type="text" required>
+                </div>
+                <button id="search-btn" type="submit">SEARCH</button>
+            </form>
+
+            <div class="results-list" th:if="${results != null}">
+                <p><strong>Matching Students:</strong></p>
+                <div th:each="s : ${results}" class="result-item">
+                    <span th:text="${s.id + ' - ' + s.firstName + ' ' + s.lastName + ' (' + s.level + ', Dept ' + s.departmentId + ')'}"></span>
+                    <a th:href="@{/AETSS/studentMG/students/{id}(id=${s.id})}">View</a>
+                </div>
+            </div>
+        </div>
+
+        <div th:replace="~{fragments :: goback}"></div>
+    </div>
+
+    <div th:replace="~{fragments :: footer}"></div>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
